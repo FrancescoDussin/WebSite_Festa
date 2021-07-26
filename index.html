@@ -8,16 +8,29 @@
   <link rel="stylesheet " type="text/css" href="stylefesta.css ">
   <script src="botsending.js" type="text/javascript"></script>
   <title>festa pove</title>
+
+  <script type="text/javascript">
+    function fn1() {
+      var str = document.getElementById("text1").value;
+      var temp_botmsg;
+      alert("value is" + str);
+    }
+  </script>
 </head>
 
 <body>
+  <header class="navigationbar">
+    <a class="cta" href="Bevande.html"><button>Bevande</button></a>
+    <a class="cta" href="#"><button onnclick="fn1()" id="btn1">Location</button></a>
+  </header>
+  
   <form>
     <div class="all-divs">
       <div class="input-container">
         <p class="rainbow">FESTA POVE
-          (?/09)
+          (dd/09)
         </p>
-        <input required type="text" />
+        <input id="text1" required type="text" />
         <label>Nome e Cognome</label>
       </div>
 
