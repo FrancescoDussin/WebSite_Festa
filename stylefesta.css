@@ -2,10 +2,16 @@
     background-image: radial-gradient(circle, #0b3c85, #323b8c, #4d3790, #663192, #7e2790);
 } */
 
-body {
-    background-image: radial-gradient(circle, #0b3c85, #323b8c, #4d3790, #663192, #7e2790);
-    font-family: 'Noto Sans', sans-serif;
+* {
+    align-items: center;
 }
+
+body {
+    background-image: linear-gradient(to right, #c424c4, #f80584, #fe514b, #e68524, #c0ad2c);
+}
+
+/* background-image: radial-gradient(circle, #0b3c85, #323b8c, #4d3790, #663192, #7e2790);
+font-family: 'Noto Sans', sans-serif; */
 
 @-webkit-keyframes rainbow {
     0% {
@@ -191,9 +197,8 @@ body {
     }
 }
 
-
 form {
-    background-color: rgb(64, 64, 64);
+    background-color: #333;
     width: 320px;
     height: 420px;
     /* margin: 30px auto 0; */
@@ -203,7 +208,7 @@ form {
     top: 50%;
     border-radius: 20px;
     left: 50%;
-    margin: -250px 0 0 -163px;
+    margin: -150px 0 0 -163px;
     -webkit-animation: rainbow 1s infinite;
     -ms-animation: rainbow 1s infinite;
     -o-animation: rainbow 1s infinite;
@@ -233,6 +238,63 @@ label {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+/* box-sizing: border-box; */
+
+.navigationbar {
+    width: 280px;
+    height: 30px;
+    padding: 20px;
+
+    background-color: #333;
+    border-radius: 20px;
+    border-width: 0 0 4px 0;
+    box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, .75);
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+/* .nav_links {
+    cursor: crosshair;
+    list-style: none;
+}
+
+.nav_links li {
+    display:flow-root;
+    padding: 10px;
+}
+
+.nav_links li a {
+    transition: all 0.3 ease 0s;
+}
+
+.nav_links li a:hover {
+    color:#4DB6AC;
+} */
+
+li,
+a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+button {
+    padding: 9px 25px;
+    background-color: #4DB6AC;
+    border-radius: 20px;
+    border: none;
+    cursor: crosshair;
+    transition: all 0.3 ease 0s;
+}
+
+button:hover {
+    background-color: rgba(0, 136, 169, 0.75);
 }
 
 p {
@@ -305,10 +367,10 @@ input[type=checkbox] {
     position: relative;
     cursor: crosshair;
     right: 5px;
-    bottom:6px;
+    bottom: 6px;
 }
 
-#linecisarai{
+#linecisarai {
     padding: 7px;
 }
 
