@@ -7,48 +7,85 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet " type="text/css" href="stylefesta.css ">
   <script src="botsending.js" type="text/javascript"></script>
-  <title>festa pove</title>
+  <title>Festa_Pove</title>
 
   <script type="text/javascript">
     function fn1() {
-      var str = document.getElementById("text1").value;
-      var temp_botmsg;
-      alert("value is" + str);
+      const bot_token = '1948444982:AAFuBGJl3csfNm9jznC4jleTR4f5-haU6MU'
+      const chat_id = '@povematteduss'
+
+      const form = document.querySelector('#telegram-form')
+      form.addEventListener('submit', e => {
+        // 1. block reload page 
+        e.preventDefault();
+        const elements = form.elements;
+        let message = '';
+
+        // var check_value = document.getElementById('check_CiSarai');
+        // var checker_msg = "";
+
+        // var listArray = [];
+
+        // var checkboxes = document.querySelectorAll('checkbox');
+
+        // for (var checkbox of checkboxes) {
+        //   checkbox.addEventListener('click', function () {
+        //     if (this.checked == true) {
+        //       listArray.push(this.value);
+        //       valueList
+        //     } else {
+        //       consol.log('unchecked');
+        //     }
+        //   })
+        // }
+
+
+        // 2. reading value inside the form elements
+        for (const element of elements) {
+          if (element.value.length > 0) {
+            message += `${element.id}: ${" " + element.value}\n`
+          }
+        }
+
+        // 3. TLGR_BOT api data sending
+        fetch(`https://api.telegram.org/bot${bot_token}/sendMessage?chat_id=${chat_id}&text=${encodeURI(message)}`)
+          .then(res => res.json())
+          .then(res => {
+            //positive response - if ended correctly
+            console.log(res);
+          })
+          .catch(err => {
+            //error management
+            console.error(err);
+          })
+      })
     }
   </script>
 </head>
 
 <body>
   <header class="navigationbar">
-    <a class="cta" href="Bevande.html"><button>Bevande</button></a>
-    <a class="cta" href="#"><button onnclick="fn1()" id="btn1">Location</button></a>
+    <a class="cta"
+      href="https://www.youtube.com/watch?v=3ImPzXYOAls&list=PLkNiGoO811sMK_y7JxnUj7oCex-PXHrr0"><button>Var_holder</button></a>
+    <a class="cta"
+      href="https://www.google.it/maps/@45.802773,11.7317316,3a,75y,151.78h,41.83t/data=!3m6!1e1!3m4!1s5p3J89oblO4poRPWGJFLbw!2e0!7i13312!8i6656"><button>Location</button></a>
   </header>
-  
-  <form>
+  <form id="telegram-form">
     <div class="all-divs">
       <div class="input-container">
         <p class="rainbow">FESTA POVE
           (dd/09)
         </p>
-        <input id="text1" required type="text" />
+        <input id="Name" type="text"/>
         <label>Nome e Cognome</label>
-      </div>
 
-      <div class="input-container">
-        <div class="inline-stuff">
-          <input type="checkbox" form-check-input" id="coom" name="scales">
-          <span id="linecisarai"> CI SARAI ?</span>
-        </div>
-      </div>
-      <div class="input-container">
-        <input type="submit" value="Invia" />
+        <input id="Boolean" type="text"/>
+        <label>Ci Sarai?</label>
+        
+        <button onclick="fn1()" id="btn1">Invia</button>
       </div>
     </div>
   </form>
 </body>
 
 </html>
-<!-- 
-<div class="inline-stuff">
-  <label id="cisarai-line"><input type="checkbox" form-check-input" id="coom" name="scales"> Ci sarai? </label>
-</div> -->
